@@ -1,0 +1,229 @@
+@import url("./font.css");
+* {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(242, 245, 247);
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    text-rendering: optimizelegibility;
+    overflow-x: hidden;
+}
+
+nav {
+    height: 8rem;
+    width: 100vw;
+    background-color: rgb(19, 20, 24);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 20px;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+nav .logo_link {
+    text-decoration: none;
+}
+
+.logo {
+    padding: 1vh 1vw;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo img {
+    height: 5rem;
+    width: 5rem;
+    margin-top: 1.3rem;
+}
+
+.logo .logo_text {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 0px 0.7vw;
+    justify-content: flex-end;
+    align-items: center;
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0px 0.7vw;
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+}
+
+.nav-links li a:hover {
+    color: rgb(97, 218, 251);
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 2rem;
+}
+
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 0.3rem;
+    width: 0%;
+    background-color: rgb(97, 218, 251);
+    position: absolute;
+    transition: all 250ms ease-in-out 0s;
+    margin: 0px 0px 0px 10%;
+}
+
+.nav-links li a:hover::before {
+    width: 80%;
+}
+
+.login-button {
+    background-color: transparent;
+    border: 1.5px solid rgb(242, 245, 247);
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    color: rgb(19, 20, 24);
+    background-color: rgb(242, 245, 247);
+    border: 0.5rem solid rgb(242, 245, 247);
+    transition: all 350ms ease-in-out 0s;
+}
+
+.join-button {
+    color: rgb(19, 20, 24);
+    background-color: rgb(97, 218, 251);
+    border: 0.5rem solid rgb(97, 218, 251);
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    color: rgb(242, 245, 247);
+    background-color: transparent;
+    border: 0.5rem solid rgb(242, 245, 247);
+    transition: all 350ms ease-in-out 0s;
+}
+
+.hamburger div {
+    width: 3rem;
+    height: 0.3rem;
+    background: rgb(242, 245, 247);
+    margin: 0.5rem;
+    transition: all 0.3s ease 0s;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease 0s;
+    }
+    .nav-links {
+        position: fixed;
+        background: rgb(19, 20, 24);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out 0s;
+        pointer-events: none;
+        justify-content: center;
+    }
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0px;
+    }
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0px;
+    }
+    .nav-links li a {
+        font-size: 1.7rem;
+        display: inline-block;
+        padding: 1rem 0px;
+        color: rgb(242, 245, 247) !important;
+    }
+    li.fade {
+        opacity: 1 !important;
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease 0s;
+    width: 0px;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
